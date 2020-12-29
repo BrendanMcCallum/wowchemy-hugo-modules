@@ -6,7 +6,7 @@
 {{ $icon := resources.GetMatch (printf "%s%s" (string "images/icon.") (string .type)) }}
 {{ if eq .type "svg" }}
   {{ return $icon }}
-{{ else }}
+{{ else if not (eq .type "svg") }}
   {{ $icon_resized := $icon.Fill (printf "%sx%s Center" (string .size) (string .size)) }}
   {{ return $icon_resized }}
 {{ end }}
