@@ -170,7 +170,7 @@
   {{ end }}
 
   <link rel="manifest" href="{{ "index.webmanifest" | relLangURL }}">
-  {{ $svg_icon := resources.GetMatch (printf "%s%s" (string $media_dir) (string "/icon.svg" }}
+  {{ $svg_icon := resources.GetMatch (printf "%s%s" (string $media_dir) (string "/icon.svg")) }}
   {{ if $svg_icon }}
     <link rel="icon" type="image/svg+xml" href="{{(.svg_icon).RelPermalink}}">
   {{ end }}
