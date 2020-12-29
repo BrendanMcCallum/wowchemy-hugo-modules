@@ -1,12 +1,7 @@
 {{/* Function to get website icon image. */}}
-{{/* Input: "type" (str) */}}
-{{/* Input: "size" (int) */}}
+{{/* Input: size (int) */}}
 {{/* Output: resource (obj) */}}
 
-{{ $icon := resources.GetMatch (printf "%s%s" (string "images/icon.") (string .type)) }}
-{{ if eq .type "svg" }}
-  {{ return $icon }}
-{{ else if not (eq .type "svg") }}
-  {{ $icon_resized := $icon.Fill (printf "%sx%s Center" (string .size) (string .size)) }}
-  {{ return $icon_resized }}
-{{ end }}
+{{ $icon := resources.GetMatch "images/icon.png" }}
+{{ $icon_resized := $icon.Fill (printf "%sx%s Center" (string .) (string .)) }}
+{{ return $icon_resized }}
