@@ -174,7 +174,7 @@
   {{ if (isset . "svg_icon") }}
     <link rel="icon" type="image/svg+xml" href="{{(.svg_icon).RelPermalink}}">
   {{ end }}
-  <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" (dict "size" 32 "type" "png")).RelPermalink}}">
+  <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
   <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
 
   <link rel="canonical" href="{{ .Permalink }}">
