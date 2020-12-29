@@ -1,7 +1,7 @@
-module github.com/wowchemy/wowchemy-hugo-modules/test
+module github.com/BrendanMcCallum/wowchemy-hugo-modules/test
 
 go 1.15
 
-require github.com/wowchemy/wowchemy-hugo-modules/wowchemy master
+require github.com/BrendanMcCallum/wowchemy-hugo-modules/wowchemy master
 
-replace github.com/wowchemy/wowchemy-hugo-modules/wowchemy => ../
+replace github.com/BrendanMcCallum/wowchemy-hugo-modules/wowchemy => ../
