@@ -170,7 +170,12 @@
   {{ end }}
 
   <link rel="manifest" href="{{ "index.webmanifest" | relLangURL }}">
-  <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
+  {{ $svgIcon := resources.GetMatch "images/icon.svg" }}
+  {{ if (isset .svgIcon) }}
+    <link rel="icon" type="image/svg+xml" href="{{(partial "functions/get_icon" (dict "type" "svg")).RelPermalink}}">
+  {{else}}
+    <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" (dict "size" 32 "type" "png")).RelPermalink}}">
+  {{ end }}
   <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
 
   <link rel="canonical" href="{{ .Permalink }}">
